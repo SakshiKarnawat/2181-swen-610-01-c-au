@@ -9,6 +9,7 @@ microframework.
 
 - John Doe
 
+- Alex Reinhardt
 
 ##Prerequisites
 
