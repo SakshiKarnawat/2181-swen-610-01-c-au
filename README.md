@@ -5,7 +5,7 @@ microframework.
 
 ## Team
 
-- Jane Doe
+- Stephen Opdyke
 
 - John Doe
 
