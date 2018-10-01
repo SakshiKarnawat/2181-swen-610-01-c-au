@@ -7,7 +7,7 @@ microframework.
 
 - Stephen Opdyke
 
-- John Doe
+- Zhizhuo Yang
 
 - Alex Reinhardt
 
