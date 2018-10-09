@@ -79,6 +79,9 @@ div.page h2 {
 
 div.page div.body {
     padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 div.page div.footer {

@@ -7,14 +7,16 @@
 <body>
 <div class="page">
 
-    <h1>Web Checkers</h1>
-
-    <div class="navigation">
-        <a href="/logout">Logout</a>
-    </div>
+    <h1>Login to Web Checkers</h1>
 
     <div class="body">
-        <p>${loginMessage}</p>
+        <form action="/login" method="POST">
+            Enter a user name:
+            <br/>
+            <input name="userName"/>
+            <br/><br/>
+            <button type="submit">Login</button>
+        </form>
     </div>
 
 </div>
