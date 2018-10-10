@@ -3,7 +3,9 @@ package com.webcheckers.appl;
 import com.webcheckers.model.User;
 import spark.Session;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class GameCenter {
@@ -35,5 +37,9 @@ public class GameCenter {
 
     public User getUser(String userName) {
         return currentUsers.get(userName);
+    }
+
+    public List<User> getCurrentPlayers() {
+        return new ArrayList<>(currentUsers.values());
     }
 }

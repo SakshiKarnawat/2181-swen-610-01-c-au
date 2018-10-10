@@ -7,9 +7,11 @@ body {
 a {
     color: #2677FF;
 }
+
 a:hover {
     color: #333;
 }
+
 a[disabled] {
     color: gray;
     cursor: default;
@@ -64,6 +66,7 @@ div.page div.navigation {
     color: #888;
     font-size: 12px;
     letter-spacing: 0.5px;
+    min-height: 14px;
 }
 
 div.page div.navigation a {
@@ -137,6 +140,14 @@ div.info {
     width: 50px;
 }
 
+.logoutLink {
+    float: right;
+}
+
 .errorMessage {
     color: red;
+}
+
+.challengePlayer {
+
 }

@@ -25,6 +25,8 @@ public class LoginHandler implements TemplateViewRoute {
         if (gameCenter.login(userName, request.session())) {
             vm.put(Constants.TITLE_ATTR, "Welcome!");
             vm.put(Constants.WELCOME_MESSAGE_ATTR, "Success! You are now logged in " + userName);
+            vm.put(Constants.CURRENT_PLAYERS_ATTR, gameCenter.getCurrentPlayers());
+            vm.put(Constants.CHALLENGE_ERROR_ATTR, false);
         } else {
             vm.put(Constants.TITLE_ATTR, "Login");
             vm.put(Constants.FAILED_LOGIN_ATTR, true);

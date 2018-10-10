@@ -4,6 +4,7 @@ import static spark.Spark.*;
 
 import com.webcheckers.appl.Constants;
 import com.webcheckers.appl.GameCenter;
+import com.webcheckers.ui.game.ChallengeHandler;
 import com.webcheckers.ui.game.GameController;
 import com.webcheckers.ui.login.GetLogoutRoute;
 import com.webcheckers.ui.login.LoginController;
@@ -128,11 +129,16 @@ public class WebServer {
     //// code clean; using small classes.
 
     // Shows the Checkers game Home page.
+
+    // Gets
     get(Constants.HOME_URL, new HomeController(gameCenter), templateEngine);
-    post(Constants.HOME_URL, new LoginHandler(gameCenter), templateEngine);
     get(Constants.LOGIN_URL, new LoginController(), templateEngine);
     get(Constants.LOGOUT_URL, new GetLogoutRoute(gameCenter), templateEngine);
     get(Constants.GAME_URL, new GameController(gameCenter), templateEngine);
+
+    // Posts
+    post(Constants.HOME_URL, new LoginHandler(gameCenter), templateEngine);
+    post(Constants.CHALLENGE_URL, new ChallengeHandler(gameCenter), templateEngine);
 
   }
 
