@@ -3,7 +3,6 @@ package com.webcheckers.ui;
 import com.webcheckers.appl.Constants;
 import com.webcheckers.appl.GameCenter;
 import com.webcheckers.model.User;
-import com.webcheckers.ui.login.LoginController;
 import spark.*;
 
 import java.util.HashMap;

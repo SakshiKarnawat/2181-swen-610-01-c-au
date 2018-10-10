@@ -2,7 +2,9 @@ package com.webcheckers.ui;
 
 import static spark.Spark.*;
 
+import com.webcheckers.appl.Constants;
 import com.webcheckers.appl.GameCenter;
+import com.webcheckers.ui.game.GameController;
 import com.webcheckers.ui.login.GetLogoutRoute;
 import com.webcheckers.ui.login.LoginController;
 import com.webcheckers.ui.login.LoginHandler;
@@ -50,9 +52,6 @@ public class WebServer {
   /**
    * The URL pattern to request the Home page.
    */
-  public static final String HOME_URL = "/home";
-  public static final String LOGIN_URL = "/";
-  public static final String LOGOUT_URL = "/logout";
 
   //
   // Attributes
@@ -129,10 +128,11 @@ public class WebServer {
     //// code clean; using small classes.
 
     // Shows the Checkers game Home page.
-    get(HOME_URL, new HomeController(gameCenter), templateEngine);
-    post(HOME_URL, new LoginHandler(gameCenter), templateEngine);
-    get(LOGIN_URL, new LoginController(), templateEngine);
-    get(LOGOUT_URL, new GetLogoutRoute(gameCenter), templateEngine);
+    get(Constants.HOME_URL, new HomeController(gameCenter), templateEngine);
+    post(Constants.HOME_URL, new LoginHandler(gameCenter), templateEngine);
+    get(Constants.LOGIN_URL, new LoginController(), templateEngine);
+    get(Constants.LOGOUT_URL, new GetLogoutRoute(gameCenter), templateEngine);
+    get(Constants.GAME_URL, new GameController(gameCenter), templateEngine);
 
   }
 

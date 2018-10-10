@@ -1,21 +1,15 @@
 package com.webcheckers.ui;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import com.webcheckers.appl.Constants;
 import com.webcheckers.appl.GameCenter;
 import com.webcheckers.model.User;
 import spark.ModelAndView;
 import spark.Request;
 import spark.Response;
-import spark.TemplateViewRoute;
 
-/**
- * The Web Controller for the Home page.
- *
- * @author <a href='mailto:bdbvse@rit.edu'>Bryan Basham</a>
- */
+import java.util.HashMap;
+import java.util.Map;
+
 public class HomeController extends PostLoginRoute {
 
   public HomeController(GameCenter gameCenter) {

@@ -5,6 +5,12 @@ import java.util.Map;
 
 public class Constants {
 
+    // URLS
+    public static final String HOME_URL = "/home";
+    public static final String LOGIN_URL = "/";
+    public static final String LOGOUT_URL = "/logout";
+    public static final String GAME_URL = "/game";
+
     // Session Attributes
     public final static String SESSION_USER = "user";
 
@@ -17,6 +23,7 @@ public class Constants {
     // View Names
     public static final String HOME_VIEW = "home.ftl";
     public static final String LOGIN_VIEW = "login.ftl";
+    public static final String GAME_VIEW = "game.ftl";
 
     // Login VM
     public static final Map<String, Object> DEFAULT_LOGIN_VM;
