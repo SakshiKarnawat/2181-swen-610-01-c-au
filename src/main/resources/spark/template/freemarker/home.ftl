@@ -14,7 +14,7 @@
     </div>
 
     <div class="body">
-        <p>${loginMessage}</p>
+        <p>${welcomeMessage}</p>
     </div>
 
 </div>

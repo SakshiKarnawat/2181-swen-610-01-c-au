@@ -8,8 +8,6 @@ import java.util.Map;
 
 public class GameCenter {
 
-    public final static String USER = "user";
-
     private Map<String, User> currentUsers;
 
     public GameCenter() {
@@ -23,16 +21,16 @@ public class GameCenter {
         } else {
             User user = new User(userName);
             this.currentUsers.put(userName, user);
-            session.attribute(USER, user);
+            session.attribute(Constants.SESSION_USER, user);
             return true;
         }
     }
 
     public void logout(Session session) {
         // Remove user from map and clear out session
-        User user = session.attribute(USER);
+        User user = session.attribute(Constants.SESSION_USER);
         currentUsers.remove(user.getUserName());
-        session.attributes().clear();
+        session.removeAttribute(Constants.SESSION_USER);
     }
 
     public User getUser(String userName) {

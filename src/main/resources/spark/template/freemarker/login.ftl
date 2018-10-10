@@ -10,13 +10,14 @@
     <h1>Login to Web Checkers</h1>
 
     <div class="body">
-        <form action="/login" method="POST">
-            Enter a user name:
-            <br/>
+        <form class="loginForm" action="/home" method="POST">
+            <span>Enter a user name:</span>
             <input name="userName"/>
-            <br/><br/>
-            <button type="submit">Login</button>
+            <button class="loginButton" type="submit">Login</button>
         </form>
+        <#if failedLogin>
+           <span class="errorMessage">${failedLoginMessage}</span>
+        </#if>
     </div>
 
 </div>
