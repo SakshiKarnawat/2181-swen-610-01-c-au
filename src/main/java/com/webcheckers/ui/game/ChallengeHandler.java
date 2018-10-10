@@ -25,26 +25,31 @@ public class ChallengeHandler extends PostLoginRoute {
         vm.put(Constants.TITLE_ATTR, "Welcome!");
         vm.put(Constants.WELCOME_MESSAGE_ATTR, "Welcome back " + user.getUserName() + "!");
         vm.put(Constants.CURRENT_PLAYERS_ATTR, gameCenter.getCurrentPlayers());
-        if (user != null) {
-            if (!user.isInGame()) {
-                // Set up game between two players
-                User currentUser = request.session().attribute(Constants.SESSION_USER);
-                currentUser.setInGame(true);
-                user.setInGame(true);
-                vm.put(Constants.CHALLENGE_ERROR_ATTR, false);
+        User currentUser = request.session().attribute(Constants.SESSION_USER);
+        if (user != currentUser) {
+            if (user != null) {
+                if (!user.isInGame()) {
+                    // Set up game between two players
+                    currentUser.setInGame(true);
+                    user.setInGame(true);
+                    vm.put(Constants.CHALLENGE_ERROR_ATTR, false);
+                } else {
+                    // User in Game
+                    vm.put(Constants.CHALLENGE_ERROR_ATTR, true);
+                    vm.put(Constants.CHALLENGE_MESSAGE_ATTR, "Error: User is already in a game.");
+                    return new ModelAndView(vm, Constants.HOME_VIEW);
+                }
             } else {
-                // User in Game
+                // User doesn't exist
                 vm.put(Constants.CHALLENGE_ERROR_ATTR, true);
-                vm.put(Constants.CHALLENGE_MESSAGE_ATTR, "Error: User is already in a game.");
+                vm.put(Constants.CHALLENGE_MESSAGE_ATTR, "Error: User does not exist.");
                 return new ModelAndView(vm, Constants.HOME_VIEW);
             }
+            return new ModelAndView(vm, Constants.HOME_VIEW);
         } else {
-            // User doesn't exist
             vm.put(Constants.CHALLENGE_ERROR_ATTR, true);
-            vm.put(Constants.CHALLENGE_MESSAGE_ATTR, "Error: User does not exist.");
+            vm.put(Constants.CHALLENGE_MESSAGE_ATTR, "Error: Cannot challenge yourself.");
             return new ModelAndView(vm, Constants.HOME_VIEW);
         }
-        return new ModelAndView(vm, Constants.HOME_VIEW);
     }
-
 }
