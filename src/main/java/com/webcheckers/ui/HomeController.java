@@ -23,6 +23,7 @@ public class HomeController extends PostLoginRoute {
     User user = request.session().attribute(Constants.SESSION_USER);
     vm.put(Constants.WELCOME_MESSAGE_ATTR, "Welcome back " + user.getUserName() + "!");
     vm.put(Constants.CURRENT_PLAYERS_ATTR, gameCenter.getCurrentPlayers());
+    vm.put(Constants.CHALLENGE_ERROR_ATTR, false);
     return new ModelAndView(vm , Constants.HOME_VIEW);
   }
 

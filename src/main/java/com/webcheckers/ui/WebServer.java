@@ -132,7 +132,7 @@ public class WebServer {
 
     // Gets
     get(Constants.HOME_URL, new HomeController(gameCenter), templateEngine);
-    get(Constants.LOGIN_URL, new LoginController(), templateEngine);
+    get(Constants.LOGIN_URL, new LoginController(gameCenter), templateEngine);
     get(Constants.LOGOUT_URL, new GetLogoutRoute(gameCenter), templateEngine);
     get(Constants.GAME_URL, new GameController(gameCenter), templateEngine);
 
