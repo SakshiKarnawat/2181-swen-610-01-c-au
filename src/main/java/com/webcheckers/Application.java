@@ -40,6 +40,8 @@ public final class Application {
     // responses sent back to the client. This will be the engine processing
     // the templates and associated data.
 
+    // Test
+
     final TemplateEngine templateEngine = new FreeMarkerEngine();
     final GameCenter gameCenter = new GameCenter();
     // inject the game center and freemarker engine into web server
