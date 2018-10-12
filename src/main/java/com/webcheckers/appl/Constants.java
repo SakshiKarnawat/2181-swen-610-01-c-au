@@ -28,6 +28,15 @@ public class Constants {
     public static final String CHALLENGE_ERROR_ATTR = "challengeError";
     public static final String CHALLENGE_MESSAGE_ATTR = "challengeMessage";
 
+    // Game Page Attributes
+    public static final String PLAYER_NAME_ATTR = "playerName";
+    public static final String PLAYER_COLOR_ATTR = "playerColor";
+    public static final String IS_MY_TURN_ATTR = "isMyTurn";
+    public static final String OPPONENT_NAME_ATTR = "opponentName";
+    public static final String OPPONENT_COLOR_ATTR = "opponentColor";
+    public static final String GAME_MESSAGE_ATTR = "gameMessage";
+    public static final String BOARD_ATTR = "board";
+
     // View Names
     public static final String HOME_VIEW = "home.ftl";
     public static final String LOGIN_VIEW = "login.ftl";

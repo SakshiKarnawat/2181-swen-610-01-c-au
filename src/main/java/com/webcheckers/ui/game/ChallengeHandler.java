@@ -1,7 +1,10 @@
 package com.webcheckers.ui.game;
 
+import com.sun.tools.internal.jxc.ap.Const;
 import com.webcheckers.appl.Constants;
 import com.webcheckers.appl.GameCenter;
+import com.webcheckers.appl.GameCenterException;
+import com.webcheckers.model.Game;
 import com.webcheckers.model.User;
 import com.webcheckers.ui.PostLoginRoute;
 import spark.ModelAndView;
@@ -28,13 +31,22 @@ public class ChallengeHandler extends PostLoginRoute {
         User currentUser = request.session().attribute(Constants.SESSION_USER);
         if (user != currentUser) {
             if (user != null) {
-                if (!user.isInGame()) {
-                    // Set up game between two players
-                    currentUser.setInGame(true);
-                    user.setInGame(true);
+                // Set up game between two players
+                try {
+                    Game game = gameCenter.newGame(currentUser, user);
                     vm.put(Constants.CHALLENGE_ERROR_ATTR, false);
-                } else {
-                    // User in Game
+
+                    // Set up game view
+                    vm.put(Constants.PLAYER_NAME_ATTR, game.getPlayerOne().getName());
+                    vm.put(Constants.PLAYER_COLOR_ATTR, game.getPlayerOne().getColor());
+                    vm.put(Constants.IS_MY_TURN_ATTR, true);
+                    vm.put(Constants.OPPONENT_NAME_ATTR, game.getPlayerTwo().getName());
+                    vm.put(Constants.OPPONENT_COLOR_ATTR, game.getPlayerTwo().getColor());
+                    vm.put(Constants.GAME_MESSAGE_ATTR, null);
+                    vm.put(Constants.BOARD_ATTR, game.getBoard().getBoard());
+
+                    return new ModelAndView(vm, Constants.GAME_VIEW);
+                } catch (GameCenterException e) {
                     vm.put(Constants.CHALLENGE_ERROR_ATTR, true);
                     vm.put(Constants.CHALLENGE_MESSAGE_ATTR, "Error: User is already in a game.");
                     return new ModelAndView(vm, Constants.HOME_VIEW);
@@ -45,7 +57,6 @@ public class ChallengeHandler extends PostLoginRoute {
                 vm.put(Constants.CHALLENGE_MESSAGE_ATTR, "Error: User does not exist.");
                 return new ModelAndView(vm, Constants.HOME_VIEW);
             }
-            return new ModelAndView(vm, Constants.HOME_VIEW);
         } else {
             vm.put(Constants.CHALLENGE_ERROR_ATTR, true);
             vm.put(Constants.CHALLENGE_MESSAGE_ATTR, "Error: Cannot challenge yourself.");
