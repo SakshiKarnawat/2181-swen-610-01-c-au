@@ -7,7 +7,6 @@ import spark.ModelAndView;
 import spark.Request;
 import spark.Response;
 import spark.TemplateViewRoute;
-import sun.rmi.runtime.Log;
 
 import java.util.HashMap;
 import java.util.Map;
