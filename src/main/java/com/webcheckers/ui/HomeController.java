@@ -10,6 +10,9 @@ import spark.Response;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Controller for the home page, display welcome message and gather player and challenge information
+ */
 public class HomeController extends PostLoginRoute {
 
   public HomeController(GameCenter gameCenter) {

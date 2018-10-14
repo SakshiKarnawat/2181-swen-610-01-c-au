@@ -8,6 +8,9 @@ import spark.*;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * This class ensures the user to be logged in before go to other pages
+ */
 public abstract class PostLoginRoute implements TemplateViewRoute {
 
     protected GameCenter gameCenter;
