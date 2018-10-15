@@ -1,6 +1,5 @@
 package com.webcheckers.ui.game;
 
-import com.sun.tools.internal.jxc.ap.Const;
 import com.webcheckers.appl.Constants;
 import com.webcheckers.appl.GameCenter;
 import com.webcheckers.appl.GameCenterException;
