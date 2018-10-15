@@ -3,6 +3,9 @@ package com.webcheckers.appl;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Constants class stores urls, attributes, VIEW names used by other classes
+ */
 public class Constants {
 
     // URLS

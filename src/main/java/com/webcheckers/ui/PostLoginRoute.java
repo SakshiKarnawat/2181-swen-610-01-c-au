@@ -8,6 +8,9 @@ import spark.*;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * This class ensures the user to be logged in before go to other pages
+ */
 public abstract class PostLoginRoute implements TemplateViewRoute {
 
     protected GameCenter gameCenter;
@@ -16,6 +19,12 @@ public abstract class PostLoginRoute implements TemplateViewRoute {
         this.gameCenter = gameCenter;
     }
 
+    /**
+     * Checks if there is a user in the session, if so, handles the response, else returns to login page
+     * @param request - spark request
+     * @param response - spark response
+     * @return - The model and view for where to go next
+     */
     @Override
     public ModelAndView handle(Request request, Response response) {
         Session session = request.session();
@@ -31,5 +40,11 @@ public abstract class PostLoginRoute implements TemplateViewRoute {
         }
     }
 
+    /**
+     * Function that all classes extending PostLoginRoute must implement (Does the request handling for child classes)
+     * @param request - Spark Request
+     * @param response - Spark Response
+     * @return - The model and view for where to go next
+     */
     public abstract ModelAndView postHandle(Request request, Response response);
 }
