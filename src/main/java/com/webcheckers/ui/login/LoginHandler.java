@@ -18,6 +18,12 @@ public class LoginHandler implements TemplateViewRoute {
         this.gameCenter = gameCenter;
     }
 
+    /**
+     * Handles posts to /login, sends them to home page on success and back to login on failure
+     * @param request - spark request
+     * @param response - spark response
+     * @return - model and view based on result of login
+     */
     @Override
     public ModelAndView handle(Request request, Response response) {
         Map<String, Object> vm = new HashMap<>();

@@ -13,6 +13,12 @@ public class GetLogoutRoute extends PostLoginRoute {
         super(gameCenter);
     }
 
+    /**
+     * Logs out user from the game center
+     * @param request - Spark Request
+     * @param response - Spark Response
+     * @return - Model and view for login page
+     */
     @Override
     public ModelAndView postHandle(Request request, Response response) {
         gameCenter.logout(request.session());
