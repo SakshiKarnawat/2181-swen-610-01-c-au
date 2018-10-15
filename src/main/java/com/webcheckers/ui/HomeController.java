@@ -19,6 +19,12 @@ public class HomeController extends PostLoginRoute {
     super(gameCenter);
   }
 
+  /**
+   * Create a HashMap and put in user names to the welcome information and challenge error state
+   * @param request - Spark Request
+   * @param response - Spark Response
+   * @return Model and View for Home page
+   */
   @Override
   public ModelAndView postHandle(Request request, Response response) {
     Map<String, Object> vm = new HashMap<>();
