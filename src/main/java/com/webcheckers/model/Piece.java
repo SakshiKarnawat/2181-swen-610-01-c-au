@@ -1,5 +1,10 @@
 package com.webcheckers.model;
 
+/**
+* Determeines where a piece is located on the board, what team it is on, and whether or not it is a king
+* 
+*/
+
 public class Piece {
     private boolean space;
     private boolean king;

@@ -2,6 +2,10 @@ package com.webcheckers.model;
 
 import java.util.List;
 
+/**
+* Attaches a usernmae, color, and pieces to a player.
+*/
+
 public class Player {
     private String name;
     private String color;

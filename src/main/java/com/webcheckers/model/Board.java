@@ -3,6 +3,11 @@ package com.webcheckers.model;
 import java.util.ArrayList;
 import java.util.List;
 
+/**  Creates the 8x8 game board and places the pieces in the starting locations.
+* the board creates pieces based on Rows. Rows to be phased out in a future version.
+*/
+
+
 public class Board {
 
     private List<Row> board;

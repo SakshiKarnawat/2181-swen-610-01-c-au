@@ -1,5 +1,9 @@
 package com.webcheckers.model;
 
+/**
+* Creates the game, includes setting playerOne, playerTwo, and the game board. 
+*/
+
 public class Game {
     private Player playerOne;
     private Player playerTwo;

@@ -1,5 +1,9 @@
 package com.webcheckers.model;
 
+/**
+* The user class has a username and determines whether or not a player is in  a game or not.
+*/
+
 public class User {
     private String userName;
     private boolean inGame;
