@@ -13,6 +13,10 @@ import spark.Response;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * This class handles the  challenge between two users for a game.
+ */
+
 public class ChallengeHandler extends PostLoginRoute {
 
     public ChallengeHandler(GameCenter gameCenter) {
