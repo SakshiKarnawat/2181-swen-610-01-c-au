@@ -19,6 +19,13 @@ public class ChallengeHandler extends PostLoginRoute {
         super(gameCenter);
     }
 
+    /**
+     * Checks if there is a user is in the game, if so, handles the response, else returns error that User is already in a game,
+     * or User does not exist or Cannot challenge yourself
+     * @param request - Spark Request
+     * @param response - Spark Response
+     * @return Model and view for the board page
+     */
     @Override
     public ModelAndView postHandle(Request request, Response response) {
         Map<String, Object> vm = new HashMap<>();
