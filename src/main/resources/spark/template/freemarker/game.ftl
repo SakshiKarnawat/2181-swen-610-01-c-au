@@ -23,19 +23,14 @@
 <body>
   <div class="page">
     <h1>Web Checkers</h1>
-    
+
     <div class="navigation">
-    <#if currentPlayer??>
-      <a href="/">my home</a> |
-      <a href="/signout">sign out [${playerName}]</a>
-    <#else>
-      <a href="/signin">sign in</a>
-    </#if>
+      <a class="logoutLink" href="/logout">Logout</a>
     </div>
-    
+
     <div class="body">
     <form id="gameForm" action="/submitTurn" method="POST">
-      
+
       <p>
         You are playing a game of checkers with ${opponentName}.
        <#if isMyTurn>
@@ -46,21 +41,21 @@
         and you will be informed when it is your turn.
        </#if>
       </p>
-      
+
       <div>
         <div id="game-controls">
-        
+
           <fieldset id="game-info">
             <legend>Info</legend>
             
-            <#if message??>
-            <div id="message" class="${message.type}">${message.text}</div>
+            <#if gameMessage??>
+            <div id="message" class="${gameMessage.type}">${gameMessage.text}</div>
             <#else>
             <div id="message" class="info" style="display:none">
               <!-- keep here for Client-side messages -->
             </div>
             </#if>
-            
+
             <div>
               <table data-color='RED'>
                 <tr>
@@ -76,7 +71,7 @@
               </table>
             </div>
           </fieldset>
-          
+
           <fieldset id="game-toolbar">
             <legend>Controls</legend>
             <div class="toolbar">
@@ -98,26 +93,34 @@
               </a>
             </div>
           </fieldset>
-          
+
         </div>
-  
+
         <div class="game-board">
           <table id="game-board">
             <tbody>
-            <#list board.iterator() as row>
-              <tr data-row="${row.index}">
-              <#list row.iterator() as space>
-                <td data-cell="${space.cellIdx}"
-                    <#if space.isValid() >
+            <#list board as row>
+              <tr data-row="${row.getRow()}">
+              <#list row.getPieces() as piece>
+                <td data-cell="${piece.getCol()}"
+                    <#if piece.isSpace() >
                     class="Space"
                     </#if>
                     >
-                <#if space.piece??>
-                  <div class="Piece"
-                       id="piece-${row.index}-${space.cellIdx}"
-                       data-type="${space.piece.type}"
-                       data-color="${space.piece.color}">
-                  </div>
+                <#if !piece.isSpace()>
+                    <#if piece.isKing()>
+                        <div class="Piece"
+                             id="piece-${piece.getRow()}-${piece.getCol()}"
+                             data-color="${piece.getColor()}"
+                             data-type="KING">
+                        </div>
+                    <#else>
+                        <div class="Piece"
+                             id="piece-${piece.getRow()}-${piece.getCol()}"
+                             data-color="${piece.getColor()}"
+                             data-type="SINGLE">
+                        </div>
+                    </#if>
                 </#if>
                 </td>
               </#list>
@@ -133,8 +136,8 @@
   </div>
 
   <audio id="audio" src="http://www.soundjay.com/button/beep-07.mp3" autostart="false" ></audio>
-  
+
   <script data-main="js/game/index" src="js/require.js"></script>
-  
+
 </body>
 </html>

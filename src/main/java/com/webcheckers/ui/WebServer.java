@@ -1,6 +1,14 @@
 package com.webcheckers.ui;
 
 import static spark.Spark.*;
+
+import com.webcheckers.appl.Constants;
+import com.webcheckers.appl.GameCenter;
+import com.webcheckers.ui.game.ChallengeHandler;
+import com.webcheckers.ui.game.GameController;
+import com.webcheckers.ui.login.GetLogoutRoute;
+import com.webcheckers.ui.login.LoginController;
+import com.webcheckers.ui.login.LoginHandler;
 import spark.TemplateEngine;
 
 
@@ -45,13 +53,13 @@ public class WebServer {
   /**
    * The URL pattern to request the Home page.
    */
-  public static final String HOME_URL = "/";
 
   //
   // Attributes
   //
 
   private final TemplateEngine templateEngine;
+  private final GameCenter gameCenter;
 
   //
   // Constructor
@@ -62,10 +70,12 @@ public class WebServer {
    *
    * @param templateEngine
    *    The default {@link TemplateEngine} to render views.
+   * @param gameCenter
    */
   public WebServer(
-      final TemplateEngine templateEngine) {
+          final TemplateEngine templateEngine, GameCenter gameCenter) {
     this.templateEngine = templateEngine;
+    this.gameCenter = gameCenter;
   }
 
   //
@@ -119,7 +129,16 @@ public class WebServer {
     //// code clean; using small classes.
 
     // Shows the Checkers game Home page.
-    get(HOME_URL, new HomeController(), templateEngine);
+
+    // Gets
+    get(Constants.HOME_URL, new HomeController(gameCenter), templateEngine);
+    get(Constants.LOGIN_URL, new LoginController(gameCenter), templateEngine);
+    get(Constants.LOGOUT_URL, new GetLogoutRoute(gameCenter), templateEngine);
+    get(Constants.GAME_URL, new GameController(gameCenter), templateEngine);
+
+    // Posts
+    post(Constants.HOME_URL, new LoginHandler(gameCenter), templateEngine);
+    post(Constants.CHALLENGE_URL, new ChallengeHandler(gameCenter), templateEngine);
 
   }
 

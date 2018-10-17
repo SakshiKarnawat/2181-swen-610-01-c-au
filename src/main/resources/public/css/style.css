@@ -7,9 +7,11 @@ body {
 a {
     color: #2677FF;
 }
+
 a:hover {
     color: #333;
 }
+
 a[disabled] {
     color: gray;
     cursor: default;
@@ -64,6 +66,7 @@ div.page div.navigation {
     color: #888;
     font-size: 12px;
     letter-spacing: 0.5px;
+    min-height: 14px;
 }
 
 div.page div.navigation a {
@@ -79,6 +82,10 @@ div.page h2 {
 
 div.page div.body {
     padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
 
 div.page div.footer {
@@ -121,4 +128,26 @@ div.info {
     -webkit-border-radius: 2px;
     padding: 4px;
     font-size: 13px;
+}
+
+.loginForm {
+    display: flex;
+    flex-direction: column;
+}
+
+.loginButton {
+    margin-left: auto;
+    width: 50px;
+}
+
+.logoutLink {
+    float: right;
+}
+
+.errorMessage {
+    color: red;
+}
+
+.challengePlayer {
+    padding: 5px 0
 }
