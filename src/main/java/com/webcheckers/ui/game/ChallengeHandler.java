@@ -24,7 +24,7 @@ public class ChallengeHandler extends PostLoginRoute {
      * or User does not exist or Cannot challenge yourself
      * @param request - Spark Request
      * @param response - Spark Response
-     * @return Model and view for the board page
+     * @return Model and view for the Game page
      */
     @Override
     public ModelAndView postHandle(Request request, Response response) {
