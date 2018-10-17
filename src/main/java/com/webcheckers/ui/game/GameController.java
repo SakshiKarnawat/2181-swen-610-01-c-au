@@ -10,7 +10,9 @@ import spark.Response;
 import java.util.HashMap;
 import java.util.Map;
 
-
+/**
+ * This class ensures the user can view Game Page after successful Login.
+ */
 public class GameController extends PostLoginRoute {
 
     public GameController(GameCenter gameCenter) {
