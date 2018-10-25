@@ -16,6 +16,7 @@ public abstract class PostLoginRoute implements TemplateViewRoute {
     protected GameCenter gameCenter;
 
     public PostLoginRoute(GameCenter gameCenter) {
+
         this.gameCenter = gameCenter;
     }
 

@@ -17,6 +17,7 @@ public class GameCenter {
     private List<Game> currentGames;
 
     public GameCenter() {
+
         this.currentUsers = new HashMap<>();
     }
 
@@ -40,6 +41,7 @@ public class GameCenter {
     }
 
     public User getUser(String userName) {
+
         return currentUsers.get(userName);
     }
 
