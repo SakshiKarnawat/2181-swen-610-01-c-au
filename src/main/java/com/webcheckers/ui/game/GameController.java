@@ -11,7 +11,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * This class ensures the user can view Game Page after successful Login.
+ * This class ensures the user can view Game Page after successful Login. test
  */
 public class GameController extends PostLoginRoute {
 
