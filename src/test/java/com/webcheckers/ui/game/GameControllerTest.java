@@ -1,15 +1,34 @@
 package com.webcheckers.ui.game;
-
-import org.junit.Test;
-
 import static org.junit.Assert.*;
-/*
-public class GameControllerTest {
-    @Test
-    public void gameControlsTesting throws Exception {
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+import spark.Session;
+import static org.mockito.Mockito.*;
+import com.webcheckers.appl.GameCenter;
 
 
-    }
+    public class GameControllerTest {
+
+        @Test
+        public void ctor_noArg() {
+        new GameController();
+
+        }
+
+        @Before
+        public void setUp() throws Exception {
+
+        }
+
+        @After
+        public void tearDown() throws Exception {
+
+        }
+
+
+
 
 }
-    */
+
+

@@ -16,6 +16,7 @@ import java.util.Map;
 public class GameController extends PostLoginRoute {
 
     public GameController(GameCenter gameCenter) {
+
         super(gameCenter);
     }
 
