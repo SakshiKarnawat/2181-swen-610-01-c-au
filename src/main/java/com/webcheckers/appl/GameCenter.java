@@ -13,7 +13,7 @@ import java.util.Map;
 
 public class GameCenter {
 
-    private Map<String, User> currentUsers;
+    Map<String, User> currentUsers;
     private List<Game> currentGames;
 
     public GameCenter() {
@@ -35,8 +35,7 @@ public class GameCenter {
 
     public void logout(Session session) {
         // Remove user from map and clear out session
-        User user = session.attribute(Constants.SESSION_USER);
-        currentUsers.remove(user.getUserName());
+        currentUsers.remove(Constants.SESSION_USER);
         session.removeAttribute(Constants.SESSION_USER);
     }
 
