@@ -23,7 +23,7 @@ public class LoginController implements TemplateViewRoute {
      * Handles get for the /login page
      * @param request - spark request
      * @param response - spark response
-     * @return The login page if no user, the home page if a loggin in user tries to login again
+     * @return The login page if no user, the home page if a logged in user tries to login again
      */
     @Override
     public ModelAndView handle(Request request, Response response) {
