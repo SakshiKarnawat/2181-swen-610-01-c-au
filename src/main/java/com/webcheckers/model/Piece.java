@@ -52,8 +52,8 @@ public class Piece {
         return cell;
     }
 
-    public void setCell(int col) {
-        this.cell = col;
+    public void setCell(int cell) {
+        this.cell = cell;
     }
 
     public String getColor() {
