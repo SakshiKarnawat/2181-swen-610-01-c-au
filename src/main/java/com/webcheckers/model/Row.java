@@ -1,6 +1,8 @@
 package com.webcheckers.model;
 
+import java.util.Iterator;
 import java.util.List;
+import java.util.Spliterator;
 
 /**
 * The board class contains rows which contain the pieces. \
@@ -10,11 +12,14 @@ import java.util.List;
 
 public class Row implements Iterable<Space>{
     private int row;
-    private List<Piece> pieces;
+    private List<Space> spaces;
 
-    public Row(List<Piece> rowList, int row) {
-        this.pieces = rowList;
+    public Row(List<Space> rowList, int row) {
+        this.spaces = rowList;
         this.row = row;
+    }
+    public Iterator<Space> iterator() {
+        return spaces.iterator();
     }
 
     public int getRow() {
@@ -26,10 +31,15 @@ public class Row implements Iterable<Space>{
     }
 
     public List<Piece> getPieces() {
-        return pieces;
+        return spaces;
     }
 
     public void setPieces(List<Piece> pieces) {
-        this.pieces = pieces;
+        this.spaces = pieces;
+    }
+
+    @Override
+    public Spliterator<Space> spliterator() {
+        return null;
     }
 }
