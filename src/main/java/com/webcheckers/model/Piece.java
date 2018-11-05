@@ -9,18 +9,18 @@ public class Piece {
     private boolean space;
     private boolean king;
     private int row;
-    private int col;
+    private int cell;
     private String color;
 
-    public Piece(int row, int col, String color) {
+    public Piece(int row, int cell, String color) {
         this.row = row;
-        this.col = col;
+        this.cell = cell;
         this.color = color;
     }
 
-    public Piece(int row, int col) {
+    public Piece(int row, int cell) {
         this.row = row;
-        this.col = col;
+        this.cell = cell;
         this.space = true;
     }
 
@@ -48,12 +48,12 @@ public class Piece {
         this.row = row;
     }
 
-    public int getCol() {
-        return col;
+    public int getCell() {
+        return cell;
     }
 
-    public void setCol(int col) {
-        this.col = col;
+    public void setCell(int col) {
+        this.cell = col;
     }
 
     public String getColor() {

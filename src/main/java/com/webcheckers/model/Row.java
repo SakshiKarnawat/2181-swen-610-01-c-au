@@ -8,7 +8,7 @@ import java.util.List;
 *
 */
 
-public class Row {
+public class Row implements Iterable<Space>{
     private int row;
     private List<Piece> pieces;
 

@@ -8,7 +8,7 @@ import java.util.List;
 */
 
 
-public class Board {
+public class Board implements Iterable<Row>{
 
     private List<Row> board;
 
@@ -17,49 +17,49 @@ public class Board {
         for (int row = 0; row < 8; row++) {
             List<Piece> rowList = new ArrayList<>();
             if (row < 3) {
-                for (int col = 0; col < 8; col++) {
+                for (int cell = 0; cell < 8; cell++) {
                     if ((row & 1) == 0) {
-                        if ((col & 1) != 0) {
-                            Piece piece = new Piece(row, col, "RED");
+                        if ((cell & 1) != 0) {
+                            Piece piece = new Piece(row, cell, "RED");
                             rowList.add(piece);
                         } else {
                             // Empty space
-                            Piece piece = new Piece(row, col);
+                            Piece piece = new Piece(row, cell);
                             rowList.add(piece);
                         }
                     } else {
-                        if ((col & 1) == 0) {
-                            Piece piece = new Piece(row, col, "RED");
+                        if ((cell & 1) == 0) {
+                            Piece piece = new Piece(row, cell, "RED");
                             rowList.add(piece);
                         } else {
                             // Empty space
-                            Piece piece = new Piece(row, col);
+                            Piece piece = new Piece(row, cell);
                             rowList.add(piece);
                         }
                     }
 
                 }
             } else if (row < 5) {
-                for (int col = 0; col < 8; col++) {
-                    Piece piece = new Piece(row, col);
+                for (int cell = 0; cell < 8; cell++) {
+                    Piece piece = new Piece(row, cell);
                     rowList.add(piece);
                 }
             } else {
-                for (int col = 0; col < 8; col++) {
+                for (int cel = 0; cel < 8; cell++) {
                     if ( (row & 1) != 0 ) {
-                        if ((col & 1) == 0) {
-                            Piece piece = new Piece(row, col, "WHITE");
+                        if ((cell & 1) == 0) {
+                            Piece piece = new Piece(row, cell, "WHITE");
                             rowList.add(piece);
                         } else {
-                            Piece piece = new Piece(row, col);
+                            Piece piece = new Piece(row, cell);
                             rowList.add(piece);
                         }
                     } else {
-                        if ((col & 1) != 0) {
-                            Piece piece = new Piece(row, col, "WHITE");
+                        if ((cell & 1) != 0) {
+                            Piece piece = new Piece(row, cell, "WHITE");
                             rowList.add(piece);
                         } else {
-                            Piece piece = new Piece(row, col);
+                            Piece piece = new Piece(row, cell);
                             rowList.add(piece);
                         }
                     }
