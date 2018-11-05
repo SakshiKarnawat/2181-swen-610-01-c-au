@@ -30,14 +30,6 @@ public class Row implements Iterable<Space>{
         this.row = row;
     }
 
-    public List<Piece> getPieces() {
-        return spaces;
-    }
-
-    public void setPieces(List<Piece> pieces) {
-        this.spaces = pieces;
-    }
-
     @Override
     public Spliterator<Space> spliterator() {
         return null;
