@@ -13,13 +13,14 @@ public class TurnHandler extends PostLoginRoute {
     }
 
     /**
-     * Checks if there is a user is in the game, if so, handles the response, else returns to the Login page
+     *
      * @param request - Spark Request
      * @param response - Spark Response
-     * @return Null
+     * @return
      */
     @Override
     public ModelAndView postHandle(Request request, Response response) {
+
         return null;
     }
 }
