@@ -77,10 +77,16 @@ This section describes the detail design of sub-system X.
 > Provide a summary of the purpose of this sub-system.
 
 ### Static models
-George
+
+Class diagrams are shown below:
+
 > Provide one or more static models (UML class or object diagrams) with some details such as critical attributes and methods.  If the sub-system is large (over 10 classes) then consider decomposing into multiple, smaller, more focused diagrams.
 
 ### Dynamic models
-George
+
+Sequence Diagrams for the project are shown below:
+![Sequence Diagram 1](/docs/SequenceDiagram_Part1.png)
+![Sequence Diagram 2](/docs/SequenceDiagram_Part2.png)
+
 > Provide any dynamic model, such as state and sequence diagrams, as is relevant to a particularly significant user story.
 > For example, in WebCheckers you might create a sequence diagram of the `POST /validateMove` HTTP request processing or you might use a state diagram if the Game component uses a state machine to manage the game.
