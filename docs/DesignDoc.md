@@ -3,18 +3,15 @@
 > The following template provides the headings for your Design Documentation.  As you edit each section make sure you remove these commentary 'blockquotes'; the lines that start with a > character.
 
 ## Executive Summary
-Alex
 The application must allow players to play checkers with other players who are currently signed-in. The game user interface (UI) will support a game experience using drag-and-drop browser capabilities for making moves.
 
 Beyond this minimal set of features, we have grand vision for what we could do including watching live games, playing multiple games, playing games asynchronously, reviewing past games, running tournaments with timed moves, and offering AI players to compete against.
 
 ### Purpose
-ALex
-> Provide a very brief statement about the project and most important user group and user goals.
+This is a web based Checkers game, where players can log into a website to challenge another player to a game of checkers. This is a project written in Java, Spark, HTML, and Javascript. The maven tool is used to build and run the program which can be accessed with a web browser. 
 
 ### Glossary and Acronyms
-Alex
-> Provide a table of terms and acronyms.
+
 
 | Term | Definition |
 |------|------------|
