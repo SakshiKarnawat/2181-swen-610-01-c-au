@@ -4,7 +4,9 @@
 
 ## Executive Summary
 Alex
-This is a summary of the project.
+The application must allow players to play checkers with other players who are currently signed-in. The game user interface (UI) will support a game experience using drag-and-drop browser capabilities for making moves.
+
+Beyond this minimal set of features, we have grand vision for what we could do including watching live games, playing multiple games, playing games asynchronously, reviewing past games, running tournaments with timed moves, and offering AI players to compete against.
 
 ### Purpose
 ALex
@@ -17,6 +19,7 @@ Alex
 | Term | Definition |
 |------|------------|
 | VO | Value Object |
+| EO | Entity Object|
 
 
 ## Requirements
@@ -27,15 +30,22 @@ This section describes the features of the application.
 > In this section you do not need to be exhaustive and list every story.  Focus on top-level features from the Vision document and maybe Epics and critical Stories.
 
 ### Definition of MVP
-George
-> Provide a simple description of the Minimum Viable Product.
+The minimal viable product includes these features:
 
 ### MVP Features
-George
-> Provide a list of top-level Epics and/or Stories of the MVP.
+
+1. Every player must sign-in before playing a game.
+2. Two players must be able to play a game of checkers based upon the American rules.
+3. Either player of a game may choose to resign, which ends the game.
 
 ### Roadmap of Enhancements
-> Provide a list of top-level features in order you plan to consider them.
+
+1. Games can be stored for later review.
+2. Players can play asynchronously.
+3. A player may play more than one game at a time.
+4. Other players may view an on-going game that they are not playing.
+5. Players may play a game against an AI player.
+6. Players can play in checkers tournaments.
 
 
 ## Application Domain
