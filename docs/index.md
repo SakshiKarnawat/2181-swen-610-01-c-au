@@ -1,10 +1,14 @@
 # PROJECT Home
 
-Welcome to the PROJECT Project!
+Welcome to the WebCheker Game (Java) Project!
 
 ## Team
 
-* MEMBER
+* Zhizhuo Yang (George)
+
+* Alex Reinhardt
+
+* Sakshi Karnawat
 
 ## [Design Documentation](DesignDoc)
 
