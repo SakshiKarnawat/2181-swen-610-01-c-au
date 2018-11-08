@@ -79,6 +79,7 @@ This section describes the detail design of sub-system X.
 ### Static models
 
 Class diagrams are shown below:
+![Class Diagram](/docs/CheckersClassDiagram.png)
 
 > Provide one or more static models (UML class or object diagrams) with some details such as critical attributes and methods.  If the sub-system is large (over 10 classes) then consider decomposing into multiple, smaller, more focused diagrams.
 
