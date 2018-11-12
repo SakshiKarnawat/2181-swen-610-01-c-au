@@ -20,11 +20,16 @@ This is a web based Checkers game, where players can log into a website to chall
 
 
 ## Requirements
-Sakshi
 
+1. This application can be played between 2 players who rotate turns begins with a set of 12 discs of red or black. 
+2. A piece can only be moved diagonally on to the dark squares until it has been crowned as the king. 
+3. Players capture their challenger's pieces by jumping over them diagonally to the next empty diagonal space if available.             The jumped pieces are then captured and removed from the board. 
+4. If you can make a jump, you have no option but to proceed, however if there are several jumps available, you select one.  A player cannot jump their man/piece or the same piece twice in the same move. 
+Additionally, a player is permitted to make multiple jumps if the pieces of the challenger are arranged in that manner. 
+5. It is possible to change the direction of the jump. For example, if one piece is captured by jumping on the next diagonal, another piece may be captured by jumping in the left direction at the same time. 
+6. When a piece reaches the challenger’s end of the board, it is crowned as king and it can move both forward and backward diagonally only. Also, a king can jump in all four directions.  As the game progresses and one of the players is unable to move either due to their pieces being captured or blocked, he or she loses.
 This section describes the features of the application.
 
-> In this section you do not need to be exhaustive and list every story.  Focus on top-level features from the Vision document and maybe Epics and critical Stories.
 
 ### Definition of MVP
 The minimal viable product includes these features:
